@@ -1,0 +1,28 @@
+* {
+    background-color: #FFFFFF ;
+}
+.container {
+    padding: 25px;
+    border-radius: 3px;
+    line-height: 32px;
+}
+.plusBtn {
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    padding: auto;
+}
+.connectBtn{
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    padding: auto;
+}
+h1 {
+    font-weight: bolder;
+    font-size: 1rem;
+    text-align: center;
+    color: #000000;
+    margin: 20px 0;
+}
+ 

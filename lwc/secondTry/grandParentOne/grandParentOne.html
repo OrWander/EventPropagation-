@@ -1,0 +1,41 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-16-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="container">
+  <h1>Asperii Home Assignment</h1>
+  <hr>
+    <template if:true={showMessage}>
+        <div>
+        <p>Sorry, but you cannot have grandchildren at this time.</p>
+    </div>
+    </template>
+    <template if:false={showMessage}>
+        <div>
+            <p>Your kid is married. You currently have {numberOfGrandchildren} grandchild</p>
+        </div>
+        <template if:true={contacts.length}>
+            <div>
+                <c-parent-one contact-name={firstContactName}></c-parent-one>
+                <c-parent-two contact-name={secondContactName}></c-parent-two>
+            </div>
+        </template>       
+         <template if:false={parentsMarried}>
+            <div class="connectBtn">
+            <lightning-button label="Connect" onclick={handleConnect}></lightning-button>
+            </div>
+        </template>
+        <hr>
+        <template if:true={parentsMarried}>
+            <div class="plusBtn">
+                <c-grand-child onaddgrandchild={handleAddGrandchild}></c-grand-child>
+            </div>
+        </template>
+    </template>
+          
+</div>
+</template>

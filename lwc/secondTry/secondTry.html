@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Second try component!">
+        <div class="greeting-class">I am the div inside the lightning card {dynamicGreeting}</div>
+        <lightning-input label="Greeting" onchange={greetingChangeHandler}></lightning-input>
+    </lightning-card>
+    <lightning-input type="checkbox" label="Show div" onchange={showDivHandler}></lightning-input>
+    <template if:true={displayDiv}>
+        <div>conditional rendering</div>
+    </template>
+    <div class="wrapper">
+    <lightning-card icon-name="standard:formula">
+
+        <lightning-layout multiple-rows>
+
+            <lightning-layout-item padding="around-medium">
+            <lightning-input type="number" name="firstNumber" onchange={changeNumberHandler}>
+            </lightning-input>
+            </lightning-layout-item>
+            
+            <lightning-layout multiple-rows size="12">
+                <lightning-layout-item padding="around-medium">
+                    <lightning-input type="number" name="secondNumber" onchange={changeNumberHandler}>
+                    </lightning-input>
+                </lightning-layout-item>
+                
+                <lightning-layout-item padding="around-medium">
+                    <lightning-button-group>
+                    <lightning-button label="Add" icon-name="utility:add" icon-position="right" onclick={addcalculate}></lightning-button>
+                    <lightning-button label="Subtract" icon-name="utility:dash" icon-position="right" onclick={subcalculate}></lightning-button>
+                    <lightning-button label="Multiply" icon-name="utility:close" icon-position="right" onclick={mulcalculate}></lightning-button>
+                    <lightning-button label="Divide" icon-name="utility:magicwand" icon-position="right" onclick={divcalculate}></lightning-button>
+                </lightning-button-group>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-medium">
+                <p><lightning-formatted-number value={new_number}></lightning-formatted-number></p>            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-layout>
+
+    </lightning-card>
+</div>
+</template>
